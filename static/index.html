@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo App w ArangoDB</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/angular/angular.min.js"></script>
+    <script src="/todo.controller.js"></script>
+</head>
+<body ng-app="todoApp">
+
+    <div id="todoApp" ng-controller="TodoCtrl">
+        <h2>Todo List</h2>
+
+        <div>
+            <label>Title
+                <input type="text" ng-model="newTodo.title">
+            </label>
+            <label>Body
+                <input type="text" ng-model="newTodo.body">
+            </label>
+        </div>
+        <button ng-click="addTodo()">Add Todo</button>
+        <button ng-click="restart()">Restart</button>
+        <div>
+            <table border="1">
+                <tr>
+                    <td>Title</td>
+                    <td>Body</td>
+                </tr>
+                <tr ng-repeat="todo in todos">
+                    <td>{{todo.title}}</td>
+                    <td>{{todo.body}}</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+</html>
